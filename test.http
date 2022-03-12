@@ -1,0 +1,29 @@
+###
+GET http://localhost:3000/cookies
+
+###
+GET http://localhost:3000/cookies/4
+
+###
+POST http://localhost:3000/cookies
+content-type: application/json
+
+{
+  "name": "Madeline",
+  "calories": 300,
+  "size": "L"
+}
+
+###
+PATCH http://localhost:3000/cookies/6
+content-type: application/json
+
+{
+  "name": "Caramel",
+  "calories": 600,
+  "size": "S"
+}
+
+###
+DELETE http://localhost:3000/cookies/6
+
