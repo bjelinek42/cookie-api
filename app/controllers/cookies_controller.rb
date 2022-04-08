@@ -12,9 +12,12 @@ class CookiesController < ApplicationController
 
   def create
     cookie = Cookie.new(
-      name: "Madline", calories: "300", size: "L"
+      name: params[:name],
+      calories: params[:calories], 
+      size: params[:size]
     )
     cookie.save
+    render json: cookie
   end
 
   def update
@@ -23,10 +26,12 @@ class CookiesController < ApplicationController
     cookie.calories = params[:calories]
     cookie.size = params[:size]
     cookie.save
+    render json: cookie
   end
 
   def destroy
     cookie = Cookie.find_by(id: params[:id])
     cookie.destroy
+    render json: cookie
   end
 end
